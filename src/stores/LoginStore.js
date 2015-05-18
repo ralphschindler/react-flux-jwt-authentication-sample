@@ -6,7 +6,7 @@ import jwt_decode from 'jwt-decode';
 class LoginStore extends BaseStore {
 
   constructor() {
-    super(() => this._registerToActions.bind(this));
+    super((scope) => LoginStore.prototype._registerToActions.bind(scope));
     this._user = null;
     this._jwt = null;
   }
